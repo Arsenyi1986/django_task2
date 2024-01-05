@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% exctends "base.html" %}
 
-</body>
-</html>
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <form method="POST" action="">
+        <div>
+            <label for="username">Username</label>
+            <input name="username" id="username" type="text" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" required>
+        </div>
+        {% csrf_token %}
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}
