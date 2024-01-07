@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}New Note{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <input type="text" name="note-text" required>
+        {% csrf_token %}
+        <button type="submit">Save note</button>
+    </form>
+{% endblock %}

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}My Notes{% endblock %}
+
+{% block content %}
+    {% for note in notes %}
+        <p class="my-note">
+            {{ note.note_text }}
+        </p>
+    {% endfor %}
+{% endblock %}

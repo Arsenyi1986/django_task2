@@ -1,20 +1,12 @@
-{% exctends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %} Login {% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
-    <form method="POST" action="">
-        <div>
-            <label for="username">Username</label>
-            <input name="username" id="username" type="text" required>
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input name="password" id="password" type="password" required>
-        </div>
+    <form method="post">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
         {% csrf_token %}
-        <div>
-            <button type="submit">Submit</button>
-        </div>
+        <button type="submit">Log in</button>
     </form>
 {% endblock %}
